@@ -18,7 +18,7 @@ const Cart = () => {
       <div className="shop-banner-overlay">
         <img src={assets.logo} alt="" />
         <h2>Cart</h2>
-        <p>Home > Cart</p>
+        <p>Home -> Cart</p>
       </div>
 
       <div className="cart-list">
