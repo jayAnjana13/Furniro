@@ -1,6 +1,6 @@
 import { assets, shop_products } from "../../assets/assets";
 import GloryPage from "../../components/GloryPage/GloryPage";
-import "./CheckOut.css";
+import "./checkOut.css";
 import { StoreContext } from "../../context/StoreContext";
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
