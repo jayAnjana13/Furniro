@@ -16,7 +16,7 @@ const CheckOut = () => {
       <div className="shop-banner-overlay">
         <img src={assets.logo} alt="" />
         <h2>Check Out</h2>
-        <p>Home -> Check Out</p>
+        <p>Home - Check Out</p>
       </div>
 
       {/* check out body */}
