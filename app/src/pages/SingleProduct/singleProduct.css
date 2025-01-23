@@ -1,0 +1,132 @@
+.single-product {
+  padding: 30px 8vw;
+}
+
+.single-product-top {
+  display: flex;
+  background-color: #f9f1e7;
+  gap: 25px;
+  padding: 25px 0;
+}
+
+.single-product-top-icons {
+  display: flex;
+  gap: 15px;
+}
+.single-product-top-icons p {
+  color: #9f9f9f;
+}
+.single-product-top-icons span {
+  font-weight: 500;
+}
+
+#single-product-item {
+  font-weight: 500;
+  border-left: 1px solid black;
+  padding: 0 20px;
+}
+
+.single-product-content {
+  margin: 40px auto;
+}
+.single-product-contents {
+  display: flex;
+  flex: 1;
+}
+.sp-images {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.sp-side-images {
+  display: flex;
+  flex-direction: column;
+}
+
+/*  */
+.sp-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 25px;
+}
+.sp-details h2 {
+  font-size: 42px;
+  font-weight: 400;
+}
+.sp-price {
+  color: #9f9f9f;
+  font-size: 24px;
+}
+.sp-rating {
+  display: flex;
+  gap: 10px;
+}
+.sp-reviews {
+  padding: 0 20px;
+  border-left: 1px solid #9f9f9f;
+}
+.sp-description p {
+  color: #000000;
+}
+
+.sp-buttons {
+  display: flex;
+  gap: 20px;
+}
+.sp-qty-btn {
+  display: flex;
+  gap: 25px;
+  border: 1px solid #9f9f9f;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+.sp-add-to-cart-btn {
+  border: 1px solid #9f9f9f;
+  border-radius: 5px;
+  padding: 10px 30px;
+}
+.sp-compare-btn {
+  border: 1px solid #9f9f9f;
+  border-radius: 5px;
+  padding: 10px 30px;
+}
+
+.sp-details-bottom {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  gap: 20px;
+}
+.sp-details-bottom li {
+  list-style: none;
+}
+
+/* description css */
+.sp-body {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto;
+  gap: 30px;
+  border-top: 1px solid #9f9f9f;
+  border-bottom: 1px solid #9f9f9f;
+}
+.sp-body-para p {
+  padding: 10px 0;
+  color: #9f9f9f;
+}
+.sp-body-images {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  gap: 20px;
+}
+.sp-body-imgs {
+  width: 50%;
+}
+.sp-body-imgs img {
+  width: 100%;
+}

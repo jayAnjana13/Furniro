@@ -1,0 +1,53 @@
+.inspiration {
+  margin: 10px auto;
+  padding: 20px 8vw;
+  display: flex;
+  align-items: center;
+  background-color: #fcf8f3;
+}
+.inspiration-items {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 5px;
+}
+
+.inspiration-content-left {
+  padding: 2vw 4vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.inspiration-content-left button {
+  background: transparent;
+  padding: 0.5vw 1vw;
+  margin: 15px 0;
+  background-color: #b88e2f;
+  color: white;
+  border: none;
+  width: 40%;
+}
+
+.inspiration-content-center img {
+  width: 25vw;
+}
+.inspiration-content-right img {
+  width: 25vw;
+}
+
+.inspiration-content-right {
+  gap: 10px;
+  display: flex;
+}
+
+@media (max-width: 560px) {
+  .inspiration-items {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+  .browse-content-item img {
+    width: 100%;
+  }
+}

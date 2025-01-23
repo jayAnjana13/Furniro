@@ -1,0 +1,77 @@
+.glory {
+  background-color: #faf3ea;
+  padding: 80px 4vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glory-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.glory-items {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.glory-items-img img {
+  width: 50px;
+  height: 50px;
+}
+
+.glory-items-text h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.glory-items-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Media queries for responsiveness */
+
+/* Above 750px: Display in flex layout */
+@media (min-width: 751px) {
+  .glory-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Between 450px and 750px: Two rows of two items */
+@media (max-width: 750px) and (min-width: 451px) {
+  .glory-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .glory-items-left .glory-items,
+  .glory-items-right .glory-items {
+    flex-basis: calc(50% - 10px); /* Two items per row */
+    margin: 5px;
+  }
+}
+
+/* Below 450px: Display items one by one */
+@media (max-width: 450px) {
+  .glory-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .glory-items {
+    width: 100%;
+    max-width: 300px; /* Optional: To limit the width on smaller devices */
+  }
+}

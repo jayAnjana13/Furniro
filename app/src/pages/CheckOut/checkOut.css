@@ -1,0 +1,89 @@
+.check-out {
+  padding: 10px 8vw;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+}
+.place-order {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 100px;
+}
+
+.place-order-left {
+  width: 100%;
+  max-width: max(30%, 500px);
+}
+.place-order-left .title {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.place-order-left label {
+  font-size: 16px;
+  font-weight: 500;
+}
+.place-order-left input {
+  margin-bottom: 25px;
+  margin-top: 8px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c5c5c5;
+  border-radius: 4px;
+}
+.place-order-left select {
+  margin: 15px 0;
+  width: 100%;
+  padding: 10px;
+  color: #c5c5c5;
+  border: 1px solid #c5c5c5;
+  border-radius: 4px;
+}
+.place-order-left option {
+  margin: 15px 0;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c5c5c5;
+  border-radius: 4px;
+}
+.place-order-left .multi-fields {
+  display: flex;
+  gap: 10px;
+}
+.place-order-right {
+  width: 100%;
+  max-width: max(40%, 500px);
+}
+.place-order-ryt button {
+  border: none;
+  color: #000000;
+  border: 1px solid black;
+  background: transparent;
+  width: max(15vw, 200px);
+  padding: 12px 0px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+.place-order-ryt {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #f9f1e7;
+}
+
+.place-order .cart-total button {
+  margin-top: 30px;
+}
+
+/* Media Query */
+@media (max-width: 750px) {
+  .place-order {
+    flex-direction: column;
+  }
+}
