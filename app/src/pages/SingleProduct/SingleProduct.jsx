@@ -7,11 +7,11 @@ const SingleProduct = () => {
       <div className="single-product-top">
         <div className="single-product-top-icons">
           <p>Home</p>
-          <span>></span>
+         
         </div>
         <div className="single-product-top-icons">
           <p>Shop</p>
-          <span>></span>
+         
         </div>
         <div className="single-product-top-icons" id="single-product-item">
           Asgaard sofa

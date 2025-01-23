@@ -1,5 +1,5 @@
 import { assets } from "../../assets/assets";
-import "./GloryPage.css";
+import "./gloryPage.css";
 
 const GloryPage = () => {
   return (

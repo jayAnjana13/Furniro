@@ -12,7 +12,7 @@ const Shop = () => {
       <div className="shop-banner-overlay">
         <img src={assets.logo} alt="" />
         <h2>Shop</h2>
-        <p>Home > Shop</p>
+        <p>Home - Shop</p>
       </div>
 
       <div className="shop-filter-and-search">
