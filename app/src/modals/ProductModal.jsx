@@ -23,7 +23,7 @@ const ProductModal = ({ url, show, onHide, onProductAdded }) => {
     // Prepare product data
     const productData = {
       ...values,
-      image: assets.muggo, // Assign static image
+      image: assets.syltherine, // Assign static image
     };
 
     try {
@@ -70,7 +70,7 @@ const ProductModal = ({ url, show, onHide, onProductAdded }) => {
                   }}
                 >
                   <img
-                    src={assets.muggo}
+                    src={assets.syltherine}
                     style={{
                       width: "250px",
                       height: "150px",
