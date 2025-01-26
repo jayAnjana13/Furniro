@@ -6,15 +6,18 @@ import Shop from "./pages/Shop/Shop";
 import Cart from "./pages/Cart/Cart";
 import SingleProduct from "./pages/SingleProduct/SingleProduct";
 import CheckOut from "./pages/CheckOut/CheckOut";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
+  const url = "http://localhost:4000";
+
   return (
     <>
       <div>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
+          <Route path="/shop" element={<Shop url={url} />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/single-product" element={<SingleProduct />} />
           <Route path="/checkout" element={<CheckOut />} />

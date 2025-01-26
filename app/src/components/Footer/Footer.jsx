@@ -22,7 +22,9 @@ const Footer = () => {
               <li>
                 <Link to="/cart">Cart</Link>
               </li>
-              <li>Contact</li>
+              <li>
+                <Link to="/single-product">Details</Link>
+              </li>
             </ul>
           </div>
           <div className="footer-content-center-list">

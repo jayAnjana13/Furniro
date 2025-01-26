@@ -80,6 +80,15 @@ export const assets = {
   guarantee_icon,
   shipping_icon,
   support_icon,
+  syltherine,
+  leviosa,
+  lolito,
+  respira,
+
+  muggo,
+  grifo,
+  pingky,
+  potty,
 };
 
 export const share_img = {

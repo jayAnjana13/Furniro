@@ -11,12 +11,13 @@ const ProductMenuDisplay = ({ id, name, price, description, image, badge }) => {
 
   const handleCart = (e) => {
     e.stopPropagation();
-    addToCart(id);
+    // addToCart(id);
     setIsAdded(true);
+    navigate("/shop");
   };
 
   const MoveToSingleProduct = () => {
-    navigate("/single-product", { state: { id } });
+    navigate("/shop", { state: { id } });
   };
 
   return (

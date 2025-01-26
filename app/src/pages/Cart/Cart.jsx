@@ -6,7 +6,7 @@ import { StoreContext } from "../../context/StoreContext";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { cartItems, removeFromCart, getTotalCartAmount } =
+  const { cartItems, removeFromCart, getTotalCartAmount, product_list } =
     useContext(StoreContext);
 
   const navigate = useNavigate();
@@ -34,9 +34,7 @@ const Cart = () => {
           <br />
           <hr />
           {Object.entries(cartItems).map(([itemId, quantity]) => {
-            const item = shop_products.find(
-              (product) => product._id === itemId
-            );
+            const item = product_list.find((product) => product._id === itemId);
 
             if (!item) {
               console.warn(`Product with ID ${itemId} not found.`);

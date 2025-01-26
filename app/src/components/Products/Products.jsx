@@ -2,6 +2,7 @@ import "./products.css";
 import { product_menu } from "../../assets/assets.js";
 import ProductMenuDisplay from "../ProductMenuDisplay/ProductMenuDisplay";
 import { Link } from "react-router-dom";
+import ProductListDisplay from "../ProductListDisplay/ProductListDisplay.jsx";
 
 const Products = () => {
   return (
@@ -16,6 +17,7 @@ const Products = () => {
               name={item.name}
               description={item.description}
               price={item.price}
+              badge={item.badge}
               image={item.image}
             />
           );

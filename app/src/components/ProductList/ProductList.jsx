@@ -1,22 +1,21 @@
-import { shop_products } from "../../assets/assets";
 import ProductListDisplay from "../ProductListDisplay/ProductListDisplay";
-const ProductList = () => {
+
+const ProductList = ({ list, removeProduct, fetchList }) => {
   return (
     <div className="product">
       <div className="product-list">
-        {shop_products.map((item, index) => {
-          return (
-            <ProductListDisplay
-              key={index}
-              id={item._id}
-              name={item.name}
-              description={item.description}
-              price={item.price}
-              image={item.image}
-              badge={item.badge}
-            />
-          );
-        })}
+        {list.map((item, index) => (
+          <ProductListDisplay
+            key={item._id || index}
+            id={item._id || index}
+            name={item.name}
+            description={item.description}
+            price={item.price}
+            image={item.image}
+            badge={item.badge}
+            removeProduct={removeProduct}
+          />
+        ))}
       </div>
     </div>
   );
