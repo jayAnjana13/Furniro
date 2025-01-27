@@ -8,7 +8,7 @@ import productRoute from "./routes/productRoute.js";
 
 //app config
 const app = express();
-const port = process.env.PORT || 4000;
+const port = https://furniro-server-rplq.onrender.com/;
 
 //middleware
 app.use(express.json());
