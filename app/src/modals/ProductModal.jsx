@@ -23,7 +23,7 @@ const ProductModal = ({ url, show, onHide, onProductAdded }) => {
     // Prepare product data
     const productData = {
       ...values,
-      image: assets.lolito, // Assign static image
+      image: assets.respira, // Assign static image
     };
 
     try {
@@ -70,7 +70,7 @@ const ProductModal = ({ url, show, onHide, onProductAdded }) => {
                   }}
                 >
                   <img
-                    src={assets.lolito}
+                    src={assets.respira}
                     style={{
                       width: "250px",
                       height: "150px",
