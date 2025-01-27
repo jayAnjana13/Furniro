@@ -17,7 +17,6 @@ const ProductList = ({ url, list, setList, removeProduct, fetchList }) => {
           product._id === updatedData._id ? updatedData : product
         )
       );
-      console.log("Product updated successfully:", updatedData);
     } catch (error) {
       console.error("Error updating product:", error);
     }
