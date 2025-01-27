@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { assets } from "../../assets/assets";
+import { assets } from "../../assets/assets.js";
 import GloryPage from "../../components/GloryPage/GloryPage";
 import ProductList from "../../components/ProductList/ProductList";
 import "./shop.css";

@@ -85,10 +85,17 @@ const ProductModal = ({ url, show, onHide, onProductAdded }) => {
                 <Form.Group className="mb-3">
                   <Form.Label> Name:</Form.Label>
                   <Field
+                    as="select"
                     className="form-control"
                     name="name"
                     placeholder="Enter brand name"
-                  />
+                  >
+                    <option value="">Select brand</option>
+                    <option value="Syltherine">Syltherine</option>
+                    <option value="Leviosa">Leviosa</option>
+                    <option value="Lolito">Lolito</option>
+                    <option value="Muggo">Muggo</option>
+                  </Field>
                   <ErrorMessage
                     name="name"
                     component="div"

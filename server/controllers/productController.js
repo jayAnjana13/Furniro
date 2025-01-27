@@ -2,10 +2,8 @@
 import productModel from "../models/productModel.js";
 import fs from "fs";
 
-//add food items
+//add product
 const addProduct = async (req, res) => {
-  console.log("req.body:", req.body);
-
   const product = new productModel({
     name: req.body.name,
     description: req.body.description,
@@ -14,8 +12,6 @@ const addProduct = async (req, res) => {
     image: req.body.image,
     badge: req.body.badge,
   });
-
-  console.log("Added product is:", product);
 
   try {
     await product.save();
@@ -26,7 +22,7 @@ const addProduct = async (req, res) => {
   }
 };
 
-// all food list
+// all product list
 const listProduct = async (req, res) => {
   try {
     const products = await productModel.find({});
@@ -37,7 +33,7 @@ const listProduct = async (req, res) => {
   }
 };
 
-//remove food item
+//remove product
 const removeProduct = async (req, res) => {
   try {
     const product = await productModel.findById(req.body.id);
