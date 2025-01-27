@@ -8,7 +8,7 @@ const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const [product_list, setProduct_list] = useState([]);
 
-  const url = "http://localhost:5000"; // Replace with your backend URL
+  const url = "https://furniro-server-rplq.onrender.com"; // Replace with your backend URL
 
   // Set product list to the hardcoded data
   useEffect(() => {
