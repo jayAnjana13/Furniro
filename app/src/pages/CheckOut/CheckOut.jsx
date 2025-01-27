@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 
 const CheckOut = () => {
-  const { getTotalCartAmount, cartItems } = useContext(StoreContext);
+  const { getTotalCartAmount, cartItems, product_list } =
+    useContext(StoreContext);
 
   return (
     <div>
@@ -87,7 +88,7 @@ const CheckOut = () => {
                 </div>
 
                 {Object.entries(cartItems).map(([itemId, quantity]) => {
-                  const item = shop_products.find(
+                  const item = product_list.find(
                     (product) => product._id === itemId
                   );
                   return (
