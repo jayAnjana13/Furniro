@@ -110,6 +110,7 @@ const ProductListDisplay = ({
 
       {/* update modal */}
       <ProductUpdateModal
+        image={image}
         showProductUpdateModal={showProductUpdateModal}
         product={selectedProduct}
         handleUpdateCancel={handleUpdateCancel}
