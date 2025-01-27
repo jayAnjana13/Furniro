@@ -8,7 +8,7 @@ const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const [product_list, setProduct_list] = useState([]);
 
-  const url = "http://localhost:4000"; // Replace with your backend URL
+  const url = "http://localhost:5000"; // Replace with your backend URL
 
   // Set product list to the hardcoded data
   useEffect(() => {
@@ -63,7 +63,7 @@ const StoreContextProvider = (props) => {
     return totalAmount;
   };
 
-  //fetching foodList from database
+  //fetching productList from database
   const fetchProductList = async () => {
     const response = await axios.get(url + "/api/product/list");
     setProduct_list(response.data.data);

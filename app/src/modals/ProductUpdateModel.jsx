@@ -1,101 +1,132 @@
-import React, { useEffect, useState } from "react";
 import { Modal, Button, Form, Row, Col } from "react-bootstrap";
-import { Formik, Field, ErrorMessage } from "formik";
+import { useEffect, useState } from "react";
 
-const ProductUpdateModal = ({ url, show, onHide, onUpdate, product, item }) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    category: "",
-    description: "",
-    price: "",
-  });
+const ProductUpdateModal = ({
+  showProductUpdateModal,
+  product,
+  handleUpdateCancel,
+  updateProduct,
+}) => {
+  const [updatedProduct, setUpdatedProduct] = useState(product);
 
-  // Pre-fill form when the modal opens
   useEffect(() => {
-    if (item) {
-      setFormData({
-        name: item.name,
-        category: item.category,
-        description: item.description,
-        price: item.price,
-      });
-    }
-  }, [item]);
+    setUpdatedProduct(product); // Sync state when the product changes
+  }, [product]);
 
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setUpdatedProduct((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = () => {
-    onUpdate({ ...product, ...formData }); // Send updated product to parent
+  // Handle update action
+  const handleUpdate = () => {
+    updateProduct(updatedProduct); // Call the update function
+    handleUpdateCancel(); // Close the modal
   };
 
   return (
-    <Modal show={show} onHide={onHide} centered>
+    <Modal show={showProductUpdateModal} onHide={handleUpdateCancel} centered>
       <Modal.Header closeButton>
         <Modal.Title>Update Product</Modal.Title>
       </Modal.Header>
-
-      <Form onSubmit={handleSubmit}>
-        <Modal.Body>
+      <Modal.Body>
+        <Form>
           <Row>
-            <Col>
-              <Form.Group>
-                <Form.Label>Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Label>Category</Form.Label>
-                <Field
-                  as="select"
-                  className="form-control"
-                  name="category"
-                  value={formData.category}
-                  onChange={handleChange}
-                >
-                  <option value="">Select category</option>
-                  <option value="Chair">Chair</option>
-                  <option value="Table">Table</option>
-                  <option value="Sofa">Sofa</option>
-                  <option value="Bed">Bed</option>
-                </Field>
-              </Form.Group>
-              <Form.Group>
-                <Form.Label>Price</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="price"
-                  value={formData.price}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Label>Description</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="description"
-                  value={formData.description}
-                  onChange={handleChange}
-                />
-              </Form.Group>
+            <Col
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                padding: "30px 0",
+              }}
+            >
+              <img
+                src={updateProduct.image}
+                style={{
+                  width: "250px",
+                  height: "150px",
+                  objectFit: "cover",
+                }}
+                alt="Product"
+              />
             </Col>
           </Row>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={onHide}>
-            Cancel
-          </Button>
-          <Button variant="primary" onClick={handleSubmit}>
-            Update
-          </Button>
-        </Modal.Footer>
-      </Form>
+          <Form.Group controlId="formProductName">
+            <Form.Label>Product Name</Form.Label>
+            <Form.Control
+              as="select"
+              type="text"
+              name="name"
+              value={updatedProduct.name}
+              onChange={handleChange}
+            >
+              <option value="">Select brand</option>
+              <option value="Syltherine">Syltherine</option>
+              <option value="Leviosa">Leviosa</option>
+              <option value="Lolito">Lolito</option>
+              <option value="Muggo">Muggo</option>
+            </Form.Control>
+          </Form.Group>
+
+          <Form.Group controlId="formProductCategory" className="mb-3">
+            <Form.Label>Category</Form.Label>
+            <Form.Control
+              as="select"
+              name="category"
+              value={updatedProduct.category || ""}
+              onChange={handleChange}
+            >
+              <option value="">Select category</option>
+              <option value="Table">Table</option>
+              <option value="Chair">Chair</option>
+              <option value="Sofa">Sofa</option>
+              <option value="Bed">Bed</option>
+            </Form.Control>
+          </Form.Group>
+
+          <Form.Group controlId="formProductPrice" className="mb-3">
+            <Form.Label>Price</Form.Label>
+            <Form.Control
+              type="number"
+              name="price"
+              value={updatedProduct.price || ""}
+              onChange={handleChange}
+              placeholder="Enter product price"
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formProductBadge" className="mb-3">
+            <Form.Label>Badge</Form.Label>
+            <Form.Control
+              type="text"
+              name="badge"
+              value={updatedProduct.badge || ""}
+              onChange={handleChange}
+              placeholder="Add badge (if any)"
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formProductDescription" className="mt-3">
+            <Form.Label>Description</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              name="description"
+              value={updatedProduct.description}
+              onChange={handleChange}
+            />
+          </Form.Group>
+        </Form>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handleUpdateCancel}>
+          Cancel
+        </Button>
+        <Button variant="primary" onClick={handleUpdate}>
+          Update
+        </Button>
+      </Modal.Footer>
     </Modal>
   );
 };

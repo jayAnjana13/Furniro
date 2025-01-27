@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import AddToCartModal from "../../modals/AddToCartModal";
 import DeleteConfirmationModal from "../../modals/DeleteConformationModal";
+import ProductUpdateModal from "../../modals/ProductUpdateModel";
 
 const ProductListDisplay = ({
   url,
@@ -14,6 +15,7 @@ const ProductListDisplay = ({
   image,
   badge,
   removeProduct,
+  updateProduct,
 }) => {
   // const navigate = useNavigate();
   const { addToCart } = useContext(StoreContext);
@@ -21,10 +23,10 @@ const ProductListDisplay = ({
   const [isAdded, setIsAdded] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [showProductModal, setShowProductModal] = useState(false);
+  const [showProductUpdateModal, setShowProductUpdateModal] = useState(false);
 
-  const handleShow = () => setShowModal(true); // Show the modal
-  const handleClose = () => setShowModal(false); // Close the modal
+  const handleShow = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
 
   const handleAddToCart = () => {
     setIsAdded(true);
@@ -32,21 +34,32 @@ const ProductListDisplay = ({
     addToCart(id);
   };
 
-  // Function for confirming deletion
   const handleDeleteConfirm = () => {
-    removeProduct(id); // Call removeProduct to delete the item
-    setShowDeleteModal(false); // Close the delete confirmation modal
-    // alert("Product Deleted");
+    removeProduct(id);
+    setShowDeleteModal(false);
   };
 
-  // Function for canceling deletion
   const handleDeleteCancel = () => {
-    setShowDeleteModal(false); // Close the modal without deleting
+    setShowDeleteModal(false);
   };
 
-  // const MoveToSingleProduct = () => {
-  //   navigate("/single-product", { state: { id } });
-  // };
+  const handleUpdateCancel = () => {
+    setShowProductUpdateModal(false);
+  };
+
+  // Product details for editing
+  const [selectedProduct, setSelectedProduct] = useState({
+    id,
+    name,
+    price,
+    description,
+    image,
+  });
+
+  const handleUpdateClick = () => {
+    setSelectedProduct({ id, name, price, description, image });
+    setShowProductUpdateModal(true); // Open modal
+  };
 
   return (
     <div className={`product-display ${isAdded ? "added-to-cart" : ""}`}>
@@ -63,7 +76,7 @@ const ProductListDisplay = ({
             </button>
             {!isAdded && (
               <div className="extra-options">
-                <span>Update</span>
+                <span onClick={handleUpdateClick}>Update</span>
                 <span onClick={() => setShowDeleteModal(true)}>Delete</span>
               </div>
             )}
@@ -96,6 +109,12 @@ const ProductListDisplay = ({
       />
 
       {/* update modal */}
+      <ProductUpdateModal
+        showProductUpdateModal={showProductUpdateModal}
+        product={selectedProduct}
+        handleUpdateCancel={handleUpdateCancel}
+        updateProduct={updateProduct}
+      />
     </div>
   );
 };

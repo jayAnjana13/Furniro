@@ -1,6 +1,28 @@
+import axios from "axios";
 import ProductListDisplay from "../ProductListDisplay/ProductListDisplay";
+import { useState } from "react";
 
-const ProductList = ({ list, removeProduct, fetchList }) => {
+const ProductList = ({ url, list, setList, removeProduct, fetchList }) => {
+  const [products, setProducts] = useState(list);
+
+  const updateProduct = async (updatedProduct) => {
+    try {
+      const response = await axios.put(
+        `${url}/api/product/update/${updatedProduct.id}`,
+        updatedProduct
+      );
+      const updatedData = response.data;
+      setProducts((prevProducts) =>
+        prevProducts.map((product) =>
+          product._id === updatedData._id ? updatedData : product
+        )
+      );
+      console.log("Product updated successfully:", updatedData);
+    } catch (error) {
+      console.error("Error updating product:", error);
+    }
+  };
+
   return (
     <div className="product">
       <div className="product-list">
@@ -14,6 +36,7 @@ const ProductList = ({ list, removeProduct, fetchList }) => {
             image={item.image}
             badge={item.badge}
             removeProduct={removeProduct}
+            updateProduct={updateProduct}
           />
         ))}
       </div>
