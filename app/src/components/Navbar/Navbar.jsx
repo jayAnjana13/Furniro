@@ -23,8 +23,8 @@ const Navbar = () => {
       <ul className="navbar-menu">
         <Link to="/">Home</Link>
         <Link to="/shop">Shop</Link>
+        <Link to="/cart">Cart</Link>
         <Link to="/single-product">About</Link>
-        <Link to="#">Contact</Link>
       </ul>
       <div className="navbar-right">
         <img src={assets.user_icon} alt="" />
