@@ -6,6 +6,7 @@ const ProductUpdateModal = ({
   product,
   handleUpdateCancel,
   updateProduct,
+  image,
 }) => {
   const [updatedProduct, setUpdatedProduct] = useState(product);
 
@@ -42,7 +43,7 @@ const ProductUpdateModal = ({
               }}
             >
               <img
-                src={updateProduct.image}
+                src={image}
                 style={{
                   width: "250px",
                   height: "150px",
