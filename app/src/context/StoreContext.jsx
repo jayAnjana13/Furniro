@@ -8,7 +8,7 @@ const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const [product_list, setProduct_list] = useState([]);
 
-  const url = "http://localhost:5000"; // Replace with your backend URL
+  const url = "http://localhost:4000";
 
   // Set product list to the hardcoded data
   useEffect(() => {
@@ -46,13 +46,10 @@ const StoreContextProvider = (props) => {
     let totalAmount = 0;
 
     for (const itemId in cartItems) {
-    
-     
       // Ensure correct comparison by converting both itemId and _id to string
       const product = product_list.find((p) => String(p._id) === itemId);
 
       if (product) {
-        
         totalAmount += product.price * cartItems[itemId];
       } else {
         console.warn(`Product with ID ${itemId} not found.`);

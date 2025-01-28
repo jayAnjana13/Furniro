@@ -9,7 +9,7 @@ import CheckOut from "./pages/CheckOut/CheckOut";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
-  const url = "http://localhost:5000";
+  const url = "http://localhost:4000";
 
   return (
     <>
