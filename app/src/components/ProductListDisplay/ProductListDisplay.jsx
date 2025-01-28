@@ -115,7 +115,7 @@ const ProductListDisplay = ({
         product={selectedProduct}
         handleUpdateCancel={handleUpdateCancel}
         updateProduct={updateProduct}
-        image={image}
+       
       />
     </div>
   );
