@@ -37,7 +37,7 @@ const Cart = () => {
             const item = product_list.find((product) => product._id === itemId);
 
             if (!item) {
-              console.warn(`Product with ID ${itemId} not found.`);
+              
               return null;
             }
             return (
