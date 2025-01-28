@@ -46,14 +46,13 @@ const StoreContextProvider = (props) => {
     let totalAmount = 0;
 
     for (const itemId in cartItems) {
-      // Log itemId to verify the value being compared
-      console.log("Looking for product with ID:", itemId);
-
+    
+     
       // Ensure correct comparison by converting both itemId and _id to string
       const product = product_list.find((p) => String(p._id) === itemId);
 
       if (product) {
-        console.log(`Found product: ${product.name}`);
+        
         totalAmount += product.price * cartItems[itemId];
       } else {
         console.warn(`Product with ID ${itemId} not found.`);
